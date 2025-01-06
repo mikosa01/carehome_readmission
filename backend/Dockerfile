@@ -5,7 +5,7 @@ WORKDIR /app
 COPY class_api /app/
 COPY classification /app/
 
-RUN ls -l /app/class_api/requirements.txt  # Check if the file is copied correctly
+RUN pip install --upgrade pip
 RUN pip install -r /app/class_api/requirements.txt
 
 
