@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/751319147826344836/0dc8ef6368fc4a68b5b9dff05a620421/artifacts
+end_time: 1735892708090
+entry_point_name: ''
+experiment_id: '751319147826344836'
+lifecycle_stage: active
+run_id: 0dc8ef6368fc4a68b5b9dff05a620421
+run_name: inquisitive-fowl-705
+run_uuid: 0dc8ef6368fc4a68b5b9dff05a620421
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735892706087
+status: 3
+tags: []
+user_id: michaelokuns

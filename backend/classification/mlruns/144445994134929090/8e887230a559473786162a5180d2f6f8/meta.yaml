@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/144445994134929090/8e887230a559473786162a5180d2f6f8/artifacts
+end_time: 1735929769934
+entry_point_name: ''
+experiment_id: '144445994134929090'
+lifecycle_stage: active
+run_id: 8e887230a559473786162a5180d2f6f8
+run_name: unequaled-fowl-735
+run_uuid: 8e887230a559473786162a5180d2f6f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735929767735
+status: 3
+tags: []
+user_id: michaelokuns

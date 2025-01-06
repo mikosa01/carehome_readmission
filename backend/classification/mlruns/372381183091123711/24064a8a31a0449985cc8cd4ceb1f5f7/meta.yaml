@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/372381183091123711/24064a8a31a0449985cc8cd4ceb1f5f7/artifacts
+end_time: 1735929570714
+entry_point_name: ''
+experiment_id: '372381183091123711'
+lifecycle_stage: active
+run_id: 24064a8a31a0449985cc8cd4ceb1f5f7
+run_name: nosy-mule-480
+run_uuid: 24064a8a31a0449985cc8cd4ceb1f5f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735929566051
+status: 3
+tags: []
+user_id: michaelokuns

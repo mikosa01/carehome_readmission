@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/144445994134929090/a053e562fee94a68859c8bdaafe72bc9/artifacts
+end_time: 1735893664842
+entry_point_name: ''
+experiment_id: '144445994134929090'
+lifecycle_stage: active
+run_id: a053e562fee94a68859c8bdaafe72bc9
+run_name: gentle-sponge-772
+run_uuid: a053e562fee94a68859c8bdaafe72bc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735893664836
+status: 4
+tags: []
+user_id: michaelokuns

@@ -1,0 +1,66 @@
+raw_data: "data/raw/data.csv"
+processed: "data/processed"
+model: 'model'
+
+columns: 
+  - "resident_id"
+  - "age"
+  - "gender"
+  - "chronic_conditions"
+  - "previous_hospitalizations"
+  - "mental_health_issues"
+  - "polypharmacy"
+  - "nutritional_status"
+  - "follow_up_completed"
+  - "care_plan_adherence"
+  - "staffing_level"
+  - "family_involvement"
+  - "hospital_acquired_infections"
+  - "discharge_timing"
+  - "readmitted_within_30_days"
+  - "admission_date"
+
+
+features:
+  - "gender"
+  - "mental_health_issues"
+  - "polypharmacy"
+  - "nutritional_status"
+  - "follow_up_completed"
+  - "care_plan_adherence"
+  - "staffing_level"
+  - "family_involvement"
+  - "hospital_acquired_infections"
+  - "discharge_timing"
+  - "chronic_conditions"
+  - "previous_hospitalizations"
+  - "age"
+
+target: "readmitted_within_30_days"
+
+categorical_columns: 
+  - "gender"
+  - "mental_health_issues"
+  - "polypharmacy"
+  - "nutritional_status"
+  - "follow_up_completed"
+  - "care_plan_adherence"
+  - "staffing_level"
+  - "family_involvement"
+  - "hospital_acquired_infections"
+  - "discharge_timing"
+
+
+distinct_columns: 
+  - "chronic_conditions"
+  - "previous_hospitalizations"
+
+numerical_columns: 
+  - "age"
+
+date_column: "admission_date"
+
+test_size: 0.35
+
+random_size: 0
+

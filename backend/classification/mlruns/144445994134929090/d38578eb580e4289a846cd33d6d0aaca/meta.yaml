@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/144445994134929090/d38578eb580e4289a846cd33d6d0aaca/artifacts
+end_time: 1735930230473
+entry_point_name: ''
+experiment_id: '144445994134929090'
+lifecycle_stage: active
+run_id: d38578eb580e4289a846cd33d6d0aaca
+run_name: grandiose-hare-284
+run_uuid: d38578eb580e4289a846cd33d6d0aaca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735930228568
+status: 3
+tags: []
+user_id: michaelokuns
