@@ -49,7 +49,7 @@ jobs:
       # Runs a single command using the runners shell
       # - name: Log into Docker Hub
       #   run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
-       - name: Log into Heroku Container Registry
+      - name: Log into Heroku Container Registry
         uses: docker/login-action@v2
         with:
           username: "_"
