@@ -5,7 +5,6 @@ WORKDIR /app
 COPY class_api /app/
 COPY classification /app/
 
-RUN pip -r  app/classification/requirements.txt
 RUN pip -r app/class_api/requirements.txt
 
 EXPOSE 5000
