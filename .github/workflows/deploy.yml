@@ -32,8 +32,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Instantiate DVC
         run: |
-          dvc init 
-          dvc add ../backend/classification/data
+          dvc init -f 
+          dvc add -f ../backend/classification/data
       
       # Runs a set of commands using the runners shell
       - name: Set DVC Remotes
