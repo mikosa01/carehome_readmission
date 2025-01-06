@@ -46,27 +46,65 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+
+      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+        uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+        with:
+          # Below you must provide variables for your Heroku app.
+
+          # The email address associated with your Heroku account.
+          # If you don't want to use repository secrets (which is recommended) you can do:
+          # email: my.email@example.com
+          email: ${{ secrets.HEROKU_EMAIL }}
+          
+          # Heroku API key associated with provided user's email.
+          # Api Key is available under your Heroku account settings.
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          
+          # Name of the heroku application to which the build is to be sent.
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+
+          # (Optional, default: "./")
+          # Dockerfile directory.
+          # For example, if you have a Dockerfile in the root of your project, leave it as follows:
+          dockerfile_directory: ./backend
+
+          # (Optional, default: "Dockerfile")
+          # Dockerfile name.
+          dockerfile_name: Dockerfile
+
+          # (Optional, default: "")
+          # Additional options of docker build command.
+          docker_options: "--no-cache"
+
+          # (Optional, default: "web")
+          # Select the process type for which you want the docker container to be uploaded.
+          # By default, this argument is set to "web".
+          # For more information look at https://devcenter.heroku.com/articles/process-model
+          process_type: web
+          
+
       # Runs a single command using the runners shell
       # - name: Log into Docker Hub
       #   run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
-      - name: Log into Heroku Container Registry
-        uses: docker/login-action@v2
-        with:
-          heroku_email: 'michaelmerry8@gmai.com'
-          heroku_app_name: 'care-home-backend'
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          registry: registry.heroku.com
+      # - name: Log into Heroku Container Registry
+      #   uses: docker/login-action@v2
+      #   with:
+      #     heroku_email: 'michaelmerry8@gmai.com'
+      #     heroku_app_name: 'care-home-backend'
+      #     heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+      #     registry: registry.heroku.com
 
-      # Runs a set of commands using the runners shell
-      - name: Build and push Docker image
-        run: |
-          docker build -t registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web ./backend 
-          docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web
+      # # Runs a set of commands using the runners shell
+      # - name: Build and push Docker image
+      #   run: |
+      #     docker build -t registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web ./backend 
+      #     docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web
       
-      # Runs a set of commands using the runners shell
-      - name: Release Backend to Heroku
-        run: |
-          heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
+      # # Runs a set of commands using the runners shell
+      # - name: Release Backend to Heroku
+      #   run: |
+      #     heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
 
 
 
