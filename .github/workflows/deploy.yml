@@ -52,8 +52,9 @@ jobs:
       - name: Log into Heroku Container Registry
         uses: docker/login-action@v2
         with:
-          username: "_"
-          password: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: 'michaelmerry8@gmai.com'
+          heroku_app_name: 'care-home-backend'
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           registry: registry.heroku.com
 
       # Runs a set of commands using the runners shell
