@@ -7,6 +7,6 @@ RUN pip install --upgrade pip
 RUN pip install -r /app/class_api/requirements.txt
 
 
-EXPOSE 5000
+EXPOSE $PORT
 
 CMD [ "python", '/app/class_api/app.py' ]
