@@ -33,8 +33,10 @@ jobs:
       
       - name: Set DVC Remotes
         run: 
-          dvc remote modify --local resident_data account_name ${{ secrets.DVC_ACCOUNT_NAME }}
+          dvc remote add -d resident_data azure://resident-storage/data 
+          dvc remote modify --local resident_data account_name ${{ secrets.DVC_REMOTE_NAME }}
           dvc remote modify --local resident_data sas_token ${{ secrets.DVC_SAS_TOKEN }}
+
       
       # Runs a set of commands using the runners shell
       - name: Release data to DVC remote
