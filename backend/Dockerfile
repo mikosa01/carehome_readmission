@@ -2,9 +2,7 @@ FROM python:3.10
 
 WORKDIR /app
 
-COPY class_api /app/
-COPY classification /app/
-
+COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r /app/class_api/requirements.txt
 
