@@ -31,6 +31,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Set DVC Remotes
+        env:
+          DVC_SAS_TOKEN: ${{ secrets.DVC_SAS_TOKEN }}
         run: 
           dvc remote add -d resident_data azure://resident-storage/data 
           dvc remote modify --local resident_data account_name ${{ secrets.DVC_REMOTE_NAME }}
