@@ -59,7 +59,7 @@ jobs:
           # If you don't want to use repository secrets (which is recommended) you can do:
           # email: my.email@example.com
           # super_secret: ${{ secrets.HEROKU_API_KEY }}
-          email: 'michaelmerry8@gmail.com'
+          email: ${{ secrets.HEROKU_EMAIL }}
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings.
