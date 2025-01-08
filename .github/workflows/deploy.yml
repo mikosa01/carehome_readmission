@@ -46,10 +46,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-          # Step 2: Define the super_secret variable
-      - name: Set Heroku API key as super_secret
-        run: echo "super_secret=${{ secrets.HEROKU_API_KEY }}" >> $GITHUB_ENV
-
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:
@@ -63,7 +59,7 @@ jobs:
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings.
-          heroku_api_key: ${{ env.super_secret }} 
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }} 
           
           # Name of the heroku application to which the build is to be sent.
           heroku_app_name: 'care-home-backend'
