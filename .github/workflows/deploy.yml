@@ -57,6 +57,7 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
           echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
+          heroku stack:set container --app ${{ secrets.HEROKU_APP_NAME }}
 
       # Step 4: Build and Push the Docker Image
       - name: Build and Push Docker Image to Heroku
