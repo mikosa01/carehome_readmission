@@ -29,7 +29,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install python dependencies 
         run: pip install -r requirements.txt
-             pip install "dvc[azure]"
 
       
       - name: Set DVC Remotes

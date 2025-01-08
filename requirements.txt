@@ -1,2 +1,1 @@
 -r backend/class_api/requirements.txt
-dvc-azure==3.1.0
