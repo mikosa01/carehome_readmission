@@ -73,11 +73,11 @@ def predict():
                                 "family_involvement", "hospital_acquired_infections", "discharge_timing", "chronic_conditions", 
                                 "previous_hospitalizations", "age", 'readmitted_within_30_days', 'admission_date'])
 
-    clean_data = pd.read_csv(data_path)
-    clean_data.reset_index(drop=True, inplace=True)
-    new_val.reset_index(drop=True, inplace=True)
-    update_data = pd.concat([clean_data,new_val], axis = 0, ignore_index=True)
-    update_data.to_csv(data_path, index=False)
+    # clean_data = pd.read_csv(data_path)
+    # clean_data.reset_index(drop=True, inplace=True)
+    # new_val.reset_index(drop=True, inplace=True)
+    # update_data = pd.concat([clean_data,new_val], axis = 0, ignore_index=True)
+    # update_data.to_csv(data_path, index=False)
 
     readmission_pred = model.predict_proba(X_val)
     output = '{0:.{1}f}'.format(readmission_pred[0][1], 2)
