@@ -18,7 +18,6 @@ RUN pip install --upgrade pip \
 ENV MLFLOW_CONFIG_PATH=/app/backend/classification/mlflow_config.yaml
 
 # Expose the application port
-ENV PORT=8080
 EXPOSE $PORT
 
 # Run the application
