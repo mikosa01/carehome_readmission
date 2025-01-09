@@ -9,8 +9,8 @@ from flask_cors import CORS
 import os
 
 
-
-mlflow.set_tracking_uri('../classification/mlruns')
+mlruns_path = os.path.join(os.path.dirname(__file__), '../classification/mlruns')
+mlflow.set_tracking_uri(mlruns_path)
 app = Flask(__name__)
 CORS(app)
 
