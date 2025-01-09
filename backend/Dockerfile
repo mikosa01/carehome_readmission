@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the entire backend folder into the container
 COPY . /app
 
+# Copy only requirements first to leverage Docker caching
+COPY class_api/requirements.txt /app/class_api/requirements.txt
 
 # Install Python dependencies
 RUN pip install --upgrade pip \
@@ -16,7 +18,7 @@ RUN pip install --upgrade pip \
 ENV MLFLOW_CONFIG_PATH=/app/backend/classification/mlflow_config.yaml
 
 # Expose the application port
-# ENV PORT=8080
+ENV PORT=8080
 EXPOSE $PORT
 
 # Run the application
