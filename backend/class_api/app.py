@@ -28,7 +28,10 @@ model_path = os.path.join(os.path.dirname(__file__), '../classification/model/mo
 with open (model_path, 'rb') as file:
     model = pickle.load(file)
 
-data_path = os.path.join(os.path.dirname(__file__), '../classification/data/processed/clean_data.csv')
+path = os.path.realpath(__file__) 
+dir = os.path.dirname(path)
+data_path = dir.replace('class_api', 'classification/data/processed/clean_data.csv') 
+
 # model = mlflow.sklearn.load_model(artifact)
 
 @app.route('/')
