@@ -9,6 +9,7 @@ RUN pip install -r /app/class_api/requirements.txt
 
 EXPOSE $PORT
 
-# CMD [ "python", '/app/class_api/app.py' ]
+CMD [ "python", "-m", "class_api.app" ]
+
 
 # CMD ["gunicorn", "--workers=4", "--bind", "0.0.0.0:$PORT", "class_api.app:app"]
