@@ -9,8 +9,8 @@ from flask_cors import CORS
 import os
 
 
-mlruns_path = os.path.join(os.path.dirname(__file__), '../classification/mlruns')
-mlflow.set_tracking_uri(mlruns_path)
+# mlruns_path = os.path.join(os.path.dirname(__file__), '../classification/mlruns')
+# mlflow.set_tracking_uri(mlruns_path)
 app = Flask(__name__)
 CORS(app)
 
@@ -18,11 +18,15 @@ yaml_file_path = os.path.join(os.path.dirname(__file__), '../classification/mlfl
 with open(yaml_file_path, 'r') as file:
     yam_file= yaml.safe_load(file)
 
-df= sorted(yam_file['runs'], key= lambda x: x['timestamp'], reverse= True)
-run_id = df[0]['run_id']
-artifact = 'model'
+# df= sorted(yam_file['runs'], key= lambda x: x['timestamp'], reverse= True)
+# run_id = df[0]['run_id']
+# artifact = 'model'
 
-model = mlflow.sklearn.load_model(f'runs:/{run_id}/{artifact}')
+# model = mlflow.sklearn.load_model(f'runs:/{run_id}/{artifact}')
+
+model_path = os.path.join(os.path.dirname(__file__), '../classification/model/model.pkl')
+with open (model_path, 'rb') as file:
+    model = pickle.load(file)
 
 
 # model = mlflow.sklearn.load_model(artifact)

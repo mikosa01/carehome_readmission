@@ -19,7 +19,7 @@ def main(config_file:str, processed_data:str):
                                             random_state=config_file['random_size'])
     model = trained_model(x_train=x_train, y_train=y_train)
 
-    # mymodel = save_model(model=model, file_dir=f'{directory_path(config_file['model'])}/model.pkl')
+    mymodel = save_model(model=model, file_dir=f'{directory_path(config_file['model'])}/model.pkl')
     with mlflow.start_run() as run:
         # my_path = 'model'
         # save_path = os.path.join(os.getcwd(), "model")
