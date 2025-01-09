@@ -14,20 +14,11 @@ mlflow.set_tracking_uri('../classification/mlruns')
 app = Flask(__name__)
 CORS(app)
 
-import os
+yaml_file_path = os.path.join(os.path.dirname(__file__), '../classification/mlflow_config.yaml')
+with open(yaml_file_path, 'r') as file:
+    yam_file= yaml.safe_load(file)
 
-# Get the configuration file path from environment variable
-config_path = os.getenv("MLFLOW_CONFIG_PATH", "/app/backend/classification/mlflow_config.yaml")
-
-try:
-    with open(config_path, 'r') as file:
-        config = file.read()
-        print("Configuration loaded successfully.")
-except FileNotFoundError:
-    print(f"Error: Configuration file not found at {config_path}")
-    raise
-
-df= sorted(config['runs'], key= lambda x: x['timestamp'], reverse= True)
+df= sorted(yam_file['runs'], key= lambda x: x['timestamp'], reverse= True)
 run_id = df[0]['run_id']
 artifact = 'model'
 
