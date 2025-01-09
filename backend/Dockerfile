@@ -4,15 +4,13 @@ FROM python:3.10
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy only requirements first to leverage Docker caching
-COPY backend/class_api/requirements.txt /app/class_api/requirements.txt
+# Copy the entire backend folder into the container
+COPY . /app
+
 
 # Install Python dependencies
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r /app/class_api/requirements.txt
-
-# Copy the entire backend folder into the container
-COPY . /app
 
 # Set environment variable for the configuration file path
 ENV MLFLOW_CONFIG_PATH=/app/backend/classification/mlflow_config.yaml
