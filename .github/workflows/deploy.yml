@@ -78,6 +78,42 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
           heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
+  
+  Deploy-Frontend:
+    needs: Deploy-Backend
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+       # Step 2: Install the Heroku CLI
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+
+      # Step 3: Log in to Heroku Docker Registry
+      - name: Log in to Heroku Container Registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
+          heroku stack:set container --app ${{ secrets.HEROKU_FRONTEND_APP }}
+
+      # Step 4: Build and Push the Docker Image
+      - name: Build and Push Docker Image to Heroku
+        run: |
+          docker build -t registry.heroku.com/${{ secrets.HEROKU_FRONTEND_APP }}/web ./frontend
+          docker push registry.heroku.com/${{ secrets.HEROKU_FRONTEND_APP }}/web
+
+      # Step 5: Release the Docker Container
+      - name: Release Docker Container
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          heroku container:release web --app ${{ secrets.HEROKU_FRONTEND_APP }}
 
 
 
