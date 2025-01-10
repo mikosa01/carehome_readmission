@@ -1,141 +1,164 @@
-/* Ensure the body takes up full viewport height and has no margin */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* General Body Styling */
+body {
     font-family: Arial, sans-serif;
-}
-
-/* Flexbox layout to center content and allow scrolling */
-#root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin: 0;
     padding: 20px;
-    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Form container */
-form {
-    background-color: #fff;
+/* Container Styling */
+div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
     border-radius: 10px;
-    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Note Section */
+.project-note {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    border-radius: 5px;
+}
+
+.project-note h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #08dd0f;
+}
+
+.project-note p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(75, 75, 78, 0.177);
+}
+
+/* Form Styling */
+form {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    width: 500px;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-y: auto;  /* Allow scrolling inside the form if content overflows */
-    height: auto; /* Adjust based on content */
+    gap: 15px;
 }
 
-/* Heading and paragraph */
-form > h4 {
-    font-size: 30px;
-    margin: 0;
-}
-
-form > p {
-    font-size: 18px;
-    margin: 10px 0 20px 0;
-}
-
-/* Note and Disclaimer Styling */
-form .project-note {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+form h {
+    font-size: 22px;
+    margin-bottom: 5px;
     color: #333;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-form .project-note h3 {
-    font-size: 18px;
-    color: #007BFF;
+form p {
+    font-size: 14px;
+    color: #666;
     margin-bottom: 10px;
 }
 
-form .project-note p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-form .project-note p strong {
-    font-weight: bold;
-    color: #333;
-}
-
-/* Form input fields */
-form input {
-    border: 1px solid #767676;
+/* Input and Select Fields */
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: inset 0 0 0 1000px #fff;
-    font-size: 14px;
-    line-height: 37px;
-    margin: 5px 0;
-    outline: none;
-    padding: 0 10px;
-    transition: border-color .2s ease-in-out;
-}
-
-form input::-webkit-outer-spin-button,
-form input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-form input[type=number] {
-    -moz-appearance: textfield;
-}
-
-form input:focus {
-    border-color: #3456FF;
-}
-
-/* Form submit button */
-form button {
-    background-color: #3456FF;
-    border: 1px solid #3456FF;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 15px;
-    height: 40px;
-    margin-top: 5px;
-    outline: none;
-    transition: .2s background-color ease-in-out;
     width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
 }
 
-form button:hover {
-    background-color: #2440ca;
+input:focus, select:focus {
+    border-color: #4caf50;
+    outline: none;
 }
 
-form button:disabled {
-    background-color: lightgray;
-    border-color: lightgray;
-    cursor: default;
+/* Button Styling */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:disabled {
+    background-color: #9ccc65;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+/* Result Section */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 5px;
+    color: #1565c0;
+    font-size: 16px;
 }
 
 /* Clear Button */
-form span {
-    color: gray;
+span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4caf50;
     cursor: pointer;
-    font-size: 15px;
-    padding: 15px 0;
-}
-
-form span:hover {
+    font-weight: bold;
     text-decoration: underline;
 }
 
-/* Result display */
-form .result {
-    font-size: 16px;
+span:hover {
+    color: #388e3c;
+}
+
+/* Disclaimer Section */
+.disclaimer {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff3e0;
+    border-left: 5px solid #ff5722;
+    border-radius: 5px;
+}
+
+.disclaimer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff5722;
+}
+
+.disclaimer p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Marquee Text */
+.moving-text {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    div {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .project-note h3, .disclaimer h3 {
+        font-size: 20px;
+    }
 }

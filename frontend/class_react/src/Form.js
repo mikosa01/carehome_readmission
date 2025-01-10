@@ -39,7 +39,7 @@ function Form() {
 
         setLoading(true);
 
-        fetch('http://127.0.0.1:5000/predict',{
+        fetch('https://care-home-backend-d893d8a8a937.herokuapp.com/predict',{
             method: 'POST',
             body: form_data
         })
@@ -83,11 +83,6 @@ function Form() {
                 <h3>Aim and Goal of the Project</h3>
                 <p>
                     The primary aim of this project is to predict the likelihood of a care home readmission based on a variety of health and social factors. By analyzing historical health data, we aim to assist care home administrators and healthcare providers in making informed decisions to prevent unnecessary readmissions.
-                </p>
-
-                <h3>Disclaimer</h3>
-                <p>
-                    This tool is intended for informational purposes only. The predictions made by the model are based on the provided data and should not be considered as medical advice. Always consult a healthcare professional for accurate diagnosis and treatment options. The developers are not responsible for any decisions made based on the predictions provided by this form.
                 </p>
             </div>
             <form onSubmit={handlerSubmit}>
@@ -153,6 +148,19 @@ function Form() {
                 {result && <span onClick={handlerClear}> Clear Button</span>}
                 {result && <div dangerouslySetInnerHTML = {{__html: result}} className='result'/>}
             </form>
+            < div className="Disclaimer">
+            
+            <h3>Disclaimer</h3>
+            <marquee behaviour='scroll' direction='left'>
+            <p className="moving-text">
+                This tool is intended for informational purposes only. The predictions made by the model
+                are based on the provided data and should not be considered as medical advice. Always
+                consult a healthcare professional for accurate diagnosis and treatment options. The
+                developers are not responsible for any decisions made based on the predictions provided by
+                this form.
+            </p>
+            </marquee>
+            </div>
         </div>
     )
 
