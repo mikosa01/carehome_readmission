@@ -12,6 +12,7 @@ COPY . .
 RUN npm run build
 # Install a lightweight HTTP server to serve the static build files
 RUN npm install -g serve
+
 # Expose port 3000 for the application
 EXPOSE 3000
 
