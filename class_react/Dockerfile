@@ -1,29 +1,18 @@
-# Use Node.js to build the app
-FROM node:18-alpine AS builder
-
-# Set working directory
+# Use the Node.js 20 Alpine image
+FROM node:20-alpine
+# Set the working directory inside the container
 WORKDIR /app
-
-# Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
-
+# Copy only the package files to install dependencies
+COPY class_react/package*.json .
 # Install dependencies
 RUN npm install
-
-# Copy the app source code
+# Copy all the application files
 COPY . .
-
-# Build the app for production
+# Build the React app for production
 RUN npm run build
-
-# Use a lightweight web server to serve the built app
-FROM nginx:alpine
-
-# Copy the production build from the builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Expose port 80 to serve the app
-EXPOSE 80
-
-# Start the Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Install a lightweight HTTP server to serve the static build files
+RUN npm install -g serve
+# Expose port 3000 for the application
+EXPOSE 3000
+# Command to run the app using 'serve'
+CMD ["serve", "-s", "build", "-l", "3000"]

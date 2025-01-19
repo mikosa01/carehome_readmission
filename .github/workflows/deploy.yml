@@ -79,7 +79,7 @@ jobs:
         run: |
           heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
   
-  Deploy-Frontend:
+  Deploy-Frontend:s
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
