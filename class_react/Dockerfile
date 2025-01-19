@@ -1,5 +1,5 @@
 # Use the Node.js 20 Alpine image
-FROM node:20-alpine
+FROM node:18-alpine
 # Set the working directory inside the container
 WORKDIR /app
 # Copy only the package files to install dependencies
