@@ -17,4 +17,4 @@ RUN npm install -g serve
 EXPOSE $PORT
 
 # Command to run the app using 'serve'
-CMD ["serve", "-s", "build", "-l", "$PORT"]
+CMD ["sh", "-c", "serve -s build -l ${PORT:-8080}"]
