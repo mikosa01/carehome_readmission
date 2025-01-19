@@ -3,7 +3,7 @@ FROM node:20-alpine
 # Set the working directory inside the container
 WORKDIR /app
 # Copy only the package files to install dependencies
-COPY class_react/package*.json .
+COPY package*.json .
 # Install dependencies
 RUN npm install
 # Copy all the application files
