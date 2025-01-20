@@ -83,7 +83,7 @@ def predict():
     output = '{0:.{1}f}'.format(readmission_pred[0][1], 2)
     output = str(float(output) * 100) + '%'
     output_value = float(output.strip('%'))
-    if float(output) > 0.5:
+    if float(output_value) > 0.5:
         return render_template('result.html', pred=f'The resident is likely to be readmitted soon. The probability of readmission is approximately {output}.')
     else:
         return render_template('result.html', pred=f'The resident is not likely to be readmitted in the near future. The probability of readmission is approximately {output}.')
