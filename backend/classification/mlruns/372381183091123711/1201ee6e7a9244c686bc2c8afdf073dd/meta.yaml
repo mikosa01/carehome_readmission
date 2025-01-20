@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/372381183091123711/1201ee6e7a9244c686bc2c8afdf073dd/artifacts
+end_time: 1735934616905
+entry_point_name: ''
+experiment_id: '372381183091123711'
+lifecycle_stage: active
+run_id: 1201ee6e7a9244c686bc2c8afdf073dd
+run_name: abundant-hog-565
+run_uuid: 1201ee6e7a9244c686bc2c8afdf073dd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735934612206
+status: 3
+tags: []
+user_id: michaelokuns

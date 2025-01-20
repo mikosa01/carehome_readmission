@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/144445994134929090/57e1a92b801a49d993da9f21017af423/artifacts
+end_time: 1735893701555
+entry_point_name: ''
+experiment_id: '144445994134929090'
+lifecycle_stage: active
+run_id: 57e1a92b801a49d993da9f21017af423
+run_name: youthful-fowl-24
+run_uuid: 57e1a92b801a49d993da9f21017af423
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735893699765
+status: 3
+tags: []
+user_id: michaelokuns

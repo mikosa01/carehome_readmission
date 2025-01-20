@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/751319147826344836/8a801d47d51b4e98bea0e8f6c0c6904b/artifacts
+end_time: 1735892667043
+entry_point_name: ''
+experiment_id: '751319147826344836'
+lifecycle_stage: active
+run_id: 8a801d47d51b4e98bea0e8f6c0c6904b
+run_name: youthful-steed-323
+run_uuid: 8a801d47d51b4e98bea0e8f6c0c6904b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735892667033
+status: 4
+tags: []
+user_id: michaelokuns

@@ -1,0 +1,6 @@
+gunicorn==23.0.0
+flask==3.1.0
+flask-cors==3.0.10
+jsonify==0.5
+
+-r ../classification/requirements.txt

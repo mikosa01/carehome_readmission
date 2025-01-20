@@ -1,0 +1,4 @@
+[core]
+    remote = resident_data
+['remote "resident_data"']
+    url = azure://resident-storage/data

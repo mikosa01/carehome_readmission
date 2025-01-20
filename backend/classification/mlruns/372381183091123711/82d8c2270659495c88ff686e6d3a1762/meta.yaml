@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/372381183091123711/82d8c2270659495c88ff686e6d3a1762/artifacts
+end_time: 1735893201673
+entry_point_name: ''
+experiment_id: '372381183091123711'
+lifecycle_stage: active
+run_id: 82d8c2270659495c88ff686e6d3a1762
+run_name: capricious-cod-70
+run_uuid: 82d8c2270659495c88ff686e6d3a1762
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735893196763
+status: 3
+tags: []
+user_id: michaelokuns

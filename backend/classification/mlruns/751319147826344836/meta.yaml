@@ -1,0 +1,6 @@
+artifact_location: file:///Users/mikosa/carehome_readmission/backend/classification/mlruns/751319147826344836
+creation_time: 1735892664378
+experiment_id: '751319147826344836'
+last_update_time: 1735892664378
+lifecycle_stage: active
+name: Carehome_Model
